@@ -29,16 +29,16 @@ class Rover
 
   def move_forward
     if @direction == "N"
-      @y = @y + 1
+      @y += 1
     end
     if @direction == "E"
-      @x = @x + 1
+      @x += 1
     end
     if @direction == "S"
-      @y = @y - 1
+      @y -= 1
     end
     if @direction == "W"
-      @x = @x - 1
+      @x -= 1
     end
   end
 
@@ -51,6 +51,8 @@ class Rover
       @direction = "E"
     elsif @direction == "E"
       @direction = "N"
+    else
+      puts ""
     end
   end
 
@@ -79,28 +81,12 @@ class Rover
 
   def to_s
     puts "I am at x: #{@x}, y: #{@y}, facing: #{@direction}."
-    puts ""
   end
 end
 
+
 rover1 = Rover.new(1, 2, "N")
 rover2 = Rover.new(1, 2, "N")
-
-puts "Gimme something"
-input = gets.chomp.upcase.split("")
-counter = 0
-
-while counter <= input.length - 1
-  rover1.movement(input[counter])
-  counter += 1
-  puts rover1
-end
-
-# direction = gets.chomp.upcase.split
-
-# counter = 3
-
-# # my_rover.read_instructions
 
 # puts "Hello. This is the Mars Rover Program."
 # puts "How wide would you like the plateau to be?"
@@ -110,11 +96,23 @@ end
 # plateau_length = gets.chomp.to_i
 
 # puts "Where would you like the first rover to start on the plateau? Format : x, y, compass direction."
-# rover1_x = gets.chomp.to_i
-
+# rover1_x = gets.chomp.split("")
 
 # puts "Where would you like the second rover to start on the plateau? Format : x, y, compass direction."
-# rover1_x = gets.chomp.to_i
+# rover1_x = gets.chomp.split("")
 
 # puts "Move the first rover using the letters L for Left, M for Move Forward and R for Right."
-# rover1_x = gets.chomp.split("")
+# rover1_x = gets.chomp.upcase.split("")
+
+puts "Hello"
+input = gets.chomp.upcase.split("")
+
+counter = 0
+while counter <= input.length - 1
+  rover1.movement(input[counter])
+  counter += 1
+end
+puts rover1
+
+
+
