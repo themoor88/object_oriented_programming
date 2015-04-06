@@ -2,9 +2,7 @@
 
 # Define the super class Person. We must use initialize so it can be used for instances.
 # Instance variable @name defined within the class to be used for other instances.
-
 class Person
-  # attr_accessor :name
   def initialize(name)
     @name = name
   end
@@ -26,8 +24,8 @@ class Instructor < Person
   end
 end
 
-instructor = Instructor.new("Chris")
-student = Student.new("Cristina")
+instructor = Instructor.new("Chris") # Instances of the class Person.
+student = Student.new("Cristina") # Instances of the class Person.
 
 instructor.greeting
 student.greeting
