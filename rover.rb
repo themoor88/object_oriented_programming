@@ -80,13 +80,21 @@ class Rover
   end
 
   def to_s
-    puts "I am at x: #{@x}, y: #{@y}, facing: #{@direction}."
   end
 end
 
+class Plateau
+  def initialize (max_x, max_y)
+    @min_x = 0
+    @min_y = 0
+    @max_x = gets.chomp.to_i
+    @max_y = gets.chomp.to_i
+  end
+end
 
 rover1 = Rover.new(1, 2, "N")
 rover2 = Rover.new(1, 2, "N")
+rover1.@x
 
 # puts "Hello. This is the Mars Rover Program."
 # puts "How wide would you like the plateau to be?"
